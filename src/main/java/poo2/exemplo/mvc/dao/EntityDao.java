@@ -43,6 +43,10 @@ public class EntityDao<T> {
 	public T getById(Class<T> cls, long id) {
 		return getSession().load(cls, id);
 	}
+        
+        public T getByString(Class<T> cls, String texto) {
+		return getSession().load(cls, texto);
+	}
 
 	public void update(Aluno aluno) {
 		getSession().merge(aluno);

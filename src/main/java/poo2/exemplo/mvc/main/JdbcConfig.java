@@ -14,7 +14,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 @EnableTransactionManagement
 public class JdbcConfig {
 
-   /* 
+    
     
    
 @Bean
@@ -35,8 +35,8 @@ public class JdbcConfig {
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		hibernateProperties.put("hibernate.show_sql", true);
-		hibernateProperties.put("hibernate.hbm2ddl.auto", "create");
-                //hibernateProperties.put("hibernate.hbm2ddl.auto", "update");
+		//hibernateProperties.put("hibernate.hbm2ddl.auto", "create");
+                hibernateProperties.put("hibernate.hbm2ddl.auto", "update");
 		sessionFactoryBean.setHibernateProperties(hibernateProperties);
 
 		return sessionFactoryBean;
@@ -49,7 +49,7 @@ public class JdbcConfig {
 		return transactionManager;
 	}
     
-   */
+   /**
 
 	
         
@@ -88,4 +88,5 @@ public class JdbcConfig {
 		transactionManager.setSessionFactory(sessionFactory().getObject());
 		return transactionManager;
 	}
+        * */
 }
