@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Iniciando: Aplicações WEB</title> 
+    <meta http-equiv="Content-Type" 
+    	content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <label th:text="${message}"></label>
+    <form action="#" th:action="@{/pesquisaraluno}" 
+          th:object="${aluno}" method="get">
+            <label>Nome: </label>
+            <input type="search"/>
+            <button name="Pesquisar" type="submit">Pesquisar</button>
+    </form>
+    <a href="hello?name=Marcus">Voltar</a>
+</body>
+</html>
