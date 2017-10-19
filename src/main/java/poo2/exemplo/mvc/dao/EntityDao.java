@@ -39,11 +39,12 @@ public class EntityDao<T> {
 	public List<T> getAll(Class<T> cls) {
 		return getSession().createQuery("from " + cls.getName()).list();
 	}
-
-	public T getById(Class<T> cls, long id) {
+        
+      	public T getById(Class<T> cls, long id) {
 		return getSession().load(cls, id);
 	}
         
+       @SuppressWarnings("unchecked")
         public T getByString(Class<T> cls, String texto) {
 		return getSession().load(cls, texto);
 	}

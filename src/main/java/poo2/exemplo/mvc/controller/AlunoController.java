@@ -41,17 +41,13 @@ public class AlunoController {
         return "listaralunos";
     }
     
-    /**
-     *
-     * @param model
-     * @return
-     */
+  
     @GetMapping("/pesquisaraluno")
     public String pesquisaraluno(Model model){
-        //int aluno = alunoDao.getById(cls, 0);
-        
-    
-        return "pesquisaraluno";
+            Aluno alunos = alunoDao.getByCpf("taynara");
+      model.addAttribute("alunos", alunos);
+                  
+    return "pesquisaraluno";
     }
     
 }
