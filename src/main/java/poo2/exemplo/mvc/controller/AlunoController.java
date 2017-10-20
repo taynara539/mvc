@@ -1,6 +1,7 @@
 package poo2.exemplo.mvc.controller;
 
 import java.util.List;
+import javax.security.auth.message.callback.PrivateKeyCallback;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +42,17 @@ public class AlunoController {
         return "listaralunos";
     }
     
-  
+    @GetMapping("/pesquisaraluno")
+    public String pesquisaraluno(Model model) {
+        Aluno aluno = alunoDao.getBy(model.toString());
+       // model.getClass();
+        model.addAttribute("aluno", aluno);
+        System.out.println("encontrou "  + "     ---"+ aluno.getNome());
+
+        return "pesquisaraluno";
+    }
+     
+    /*
     @GetMapping("/pesquisaraluno")
     public String pesquisaraluno(Model model){
             Aluno alunos = alunoDao.getByCpf("taynara");
@@ -49,5 +60,7 @@ public class AlunoController {
                   
     return "pesquisaraluno";
     }
+    */
     
+   
 }

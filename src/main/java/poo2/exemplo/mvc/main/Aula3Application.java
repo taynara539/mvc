@@ -1,5 +1,9 @@
 package poo2.exemplo.mvc.main;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import jdk.nashorn.internal.objects.NativeArray;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -8,16 +12,17 @@ import poo2.exemplo.mvc.dao.AlunoDao;
 import poo2.exemplo.mvc.model.Aluno;
 
 @ComponentScan(basePackages = {"poo2.exemplo.mvc.main",
-		"poo2.exemplo.mvc.controller", "poo2.exemplo.mvc.dao",
-		"poo2.exemplo.mvc.model"
+    "poo2.exemplo.mvc.controller", "poo2.exemplo.mvc.dao",
+    "poo2.exemplo.mvc.model"
 })
 @EnableAutoConfiguration
 public class Aula3Application {
 
-	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication
-				.run(Aula3Application.class);
-          /*AlunoDao alunoDao = context.alalgetBean(AlunoDao.class);
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication
+                .run(Aula3Application.class);
+        /*
+          AlunoDao alunoDao = context.alalgetBean(AlunoDao.class);
             Aluno aluno1 = new Aluno();
             aluno1.setNome("Joao");
             aluno1.setAtivo(true);
@@ -32,6 +37,7 @@ public class Aula3Application {
             alunoDao.create(aluno2);
             List<Aluno> alunos = alunoDao.getAll(Aluno.class);
             for(Aluno aluno : alunos)
-            System.out.println(aluno.toString());*/
-	}
+            System.out.println(aluno.toString());
+	}*/
+    }
 }
